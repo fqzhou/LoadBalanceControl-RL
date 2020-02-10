@@ -157,14 +157,14 @@ class DQNCellularAgent(agent_template.Base):
         return mainDQN.update(X, y)
 
     def get_copy_var_ops(*, dest_scope_name: str, src_scope_name: str):
-    """Creates TF operations that copy weights from `src_scope` to `dest_scope`
-    Args:
-        dest_scope_name (str): Destination weights (copy to)
-        src_scope_name (str): Source weight (copy from)
-    Returns:
-        List[tf.Operation]: Update operations are created and returned
-    """
-    # Copy variables src_scope to dest_scope
+        """Creates TF operations that copy weights from `src_scope` to `dest_scope`
+        Args:
+            dest_scope_name (str): Destination weights (copy to)
+            src_scope_name (str): Source weight (copy from)
+        Returns:
+            List[tf.Operation]: Update operations are created and returned
+        """
+        # Copy variables src_scope to dest_scope
         op_holder = []
 
         src_vars = tf.get_collection(
@@ -206,7 +206,7 @@ class DQNCellularAgent(agent_template.Base):
             self.epsilon *= self.epsilon_decay
         self.store_transition(state, action, reward, next_state)
 
-            if self.learn_step_counter % self.replace_target_iter == 0:
+        if self.learn_step_counter % self.replace_target_iter == 0:
             self.logger.debug(
             "Replace the target net's parameters at the {} time step"
             .format(self.learn_step_counter )
