@@ -1,6 +1,8 @@
 # loadbalanceRL
 Optimizing Dynamic Cellular network using Reinforcement Learning.
 This work is based on the framework of loadbalanceRL
+# platform 
+* linux or macos
 # Dependencies
 * Python 3.6
 # Authors
@@ -10,12 +12,17 @@ This work is based on the framework of loadbalanceRL
 Setup
 =====
 To install loadbalanceRL:
-
+- virtualenv
     $ virtualenv venv
     $ make install-prod
     $ source venv/bin/activate
     $ cp -r loadbalanceRL/etc rainman/venv/lib/python3.6/site-packages/loadbalanceRL-1.0-py3.6.egg/loadbalanceRL
-    
+- conda
+    $ conda creat -n venv python=3.6
+    $ conda activate venv
+    clone and change into this repository
+    $ python setup.py build
+    $ python setup.py install
   
 Command Line
 ============
